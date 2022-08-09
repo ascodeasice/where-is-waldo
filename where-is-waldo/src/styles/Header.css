@@ -1,9 +1,11 @@
 #header {
   width: 100%;
   height: var(--headerHeight);
-  background-color: var(--brown);
+  background-color: var(--darkBrown);
   position: fixed;
   top: 0;
+  box-shadow: 0 0 10px black;
+  z-index: 5;
 }
 
 #headingWrapper {
@@ -16,7 +18,7 @@
 }
 
 #headingWrapper:hover {
-  filter: invert(21%) sepia(82%) saturate(2109%) hue-rotate(172deg) brightness(95%) contrast(97%);
+  filter: invert(79%) sepia(17%) saturate(687%) hue-rotate(332deg) brightness(94%) contrast(91%);
 }
 
 #githubIcon {
@@ -27,4 +29,5 @@
 #heading {
   font-size: var(--headingSize);
   white-space: nowrap;
+  text-decoration: underline;
 }

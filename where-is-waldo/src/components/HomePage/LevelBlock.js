@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 
-const LevelBlock = ({ id }) => {
+const LevelBlock = ({ level }) => {
   return (
-    <div className='levelBlock'>
-      <Link to={`/${id}`}>
-        {/* TODO level picture and level name */}
-      </Link>
-    </div>
+    <Link to={`/${level.index}`}>
+      <div className='levelBlock'>
+        <img alt='level' src={level.levelPicture} className='levelPicture' />
+        <p className='levelText'>{level.name}</p>
+      </div>
+    </Link>
   );
 }
 

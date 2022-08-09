@@ -1,0 +1,31 @@
+#homePage {
+  background-color: var(--lightBrown);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--levelPicWidth), 1fr));
+  grid-auto-rows: min-content;
+  column-gap: 10vw;
+  row-gap: 5vw;
+  padding: 5vw 10vw 5vw 10vw;
+}
+
+.levelBlock {
+  display: grid;
+  grid-template-rows: min-content min-content;
+  justify-items: center;
+  box-shadow: 0 0 5px black;
+  padding-top: var(--levelTextSize);
+  background-color: var(--brown);
+}
+
+.levelPicture {
+  width: var(--levelPicWidth);
+  height: var(--levelPicWidth);
+}
+
+.levelText {
+  text-align: center;
+  font-size: var(--levelTextSize);
+  color: white;
+  margin: 0;
+  width: 100%;
+}

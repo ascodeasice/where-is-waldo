@@ -1,9 +1,14 @@
 :root {
   --paddingLeft: 10px;
-  --brown: #BB8082;
-  --deepBlue: #046582;
+  --darkBrown: #7D5A50;
+  --brown: #B4846C;
+  --orange: #E5B299;
+  --lightBrown: #FCDEC0;
   --headingSize: 2rem;
   --headerHeight: calc(var(--headingSize) + 44.88px);
+  /* add margin of h1 */
+  --levelPicWidth: 30vw;
+  --levelTextSize: 1.5rem;
 }
 
 body {
@@ -13,6 +18,7 @@ body {
 
 a {
   color: black;
+  text-decoration: none;
 }
 
 /* pages */
