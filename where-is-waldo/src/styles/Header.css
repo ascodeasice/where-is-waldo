@@ -1,0 +1,30 @@
+#header {
+  width: 100%;
+  height: var(--headerHeight);
+  background-color: var(--brown);
+  position: fixed;
+  top: 0;
+}
+
+#headingWrapper {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  align-items: center;
+  column-gap: 10px;
+  padding-left: var(--paddingLeft);
+  width: fit-content;
+}
+
+#headingWrapper:hover {
+  filter: invert(21%) sepia(82%) saturate(2109%) hue-rotate(172deg) brightness(95%) contrast(97%);
+}
+
+#githubIcon {
+  width: var(--headingSize);
+  height: var(--headingSize);
+}
+
+#heading {
+  font-size: var(--headingSize);
+  white-space: nowrap;
+}
