@@ -17,6 +17,10 @@
   background-color: var(--brown);
 }
 
+.levelBlock:hover {
+  opacity: 0.5;
+}
+
 .levelPicture {
   width: var(--levelPicWidth);
   height: var(--levelPicWidth);
@@ -28,4 +32,5 @@
   color: white;
   margin: 0;
   width: 100%;
+  font-family: 'Oswald', sans-serif;
 }

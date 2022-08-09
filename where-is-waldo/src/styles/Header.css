@@ -30,4 +30,5 @@
   font-size: var(--headingSize);
   white-space: nowrap;
   text-decoration: underline;
+  font-family: 'Oswald', sans-serif;
 }

@@ -2,7 +2,7 @@
 A photo tagging app that allows user to play where is waldo, and see their and other people's scores.
 # Details
 - Use React.js
-- Use firebase
+- Use firebase for leaderboard info, timer
 
 # Result
 
