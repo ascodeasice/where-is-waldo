@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
 import HomePage from './HomePage/HomePage';
 import Header from './Header';
+import LevelPage from './LevelPage/LevelPage';
 
 import WaldoLevel from '../assets/waldo/level.jpeg';
 import MinecraftLevel from '../assets/minecraft/level.png';
@@ -10,13 +10,14 @@ import LegoLevel from '../assets/lego/level.jpeg';
 import PokemonLevel from '../assets/pokemon/level.png';
 
 function App() {
-  // eslint-disable-next-line no-unused-vars
-  const [levels, setLevels] = useState([
+  // won't modify
+  const levels = [
     {
       index: 0,
       name: `Waldo`,
       levelPicture: WaldoLevel,
-      characterPictures: []
+      characterPictures: [],
+      // character names
     },
     {
       index: 1,
@@ -41,13 +42,14 @@ function App() {
       levelPicture: PokemonLevel,
       characterPictures: []
     },
-  ]);
+  ];
 
   return (
     <div className="app">
       <Header />
       <Routes>
         <Route path='/' element={<HomePage levels={levels} />} />
+        <Route path='/*' element={<LevelPage levels={levels} />} />
       </Routes>
     </div>
   );

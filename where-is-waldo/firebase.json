@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "where-is-waldo-and-more",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
