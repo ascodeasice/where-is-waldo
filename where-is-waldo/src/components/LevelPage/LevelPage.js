@@ -1,6 +1,7 @@
 import '../../styles/LevelPage.css';
 import CharacterContainer from './CharacterContainer';
 import LevelImage from './levelImage';
+import SelectBox from './SelectBox';
 import { useEffect } from 'react';
 
 const LevelPage = ({ level }) => {
@@ -13,6 +14,7 @@ const LevelPage = ({ level }) => {
     <div id='levelPage'>
       <CharacterContainer characters={level.characters} />
       <LevelImage src={level.levelPicture} />
+      <SelectBox characters={level.characters} />
     </div>
   );
 }

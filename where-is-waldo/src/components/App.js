@@ -36,9 +36,9 @@ function App() {
       name: `Waldo`,
       levelPicture: WaldoLevel,
       characters: [
-        { src: Waldo, name: 'Waldo' },
-        { src: Odlaw, name: 'Odlaw' },
-        { src: Wizard, name: 'Wizard' }
+        { src: Waldo, name: 'Waldo', found: false },
+        { src: Odlaw, name: 'Odlaw', found: false },
+        { src: Wizard, name: 'Wizard', found: false }
       ],
     },
     {
@@ -46,18 +46,18 @@ function App() {
       name: `Minecraft`,
       levelPicture: MinecraftLevel,
       characters: [
-        { src: Diamond, name: 'Diamond' },
-        { src: Latern, name: 'Lantern' },
-        { src: WitherSkull, name: 'Wither Skull' }
+        { src: Diamond, name: 'Diamond', found: false },
+        { src: Latern, name: 'Lantern', found: false },
+        { src: WitherSkull, name: 'Wither Skull', found: false }
       ]
     }, {
       index: 2,
       name: 'SpongeBob',
       levelPicture: SpongeBobLevel,
       characters: [
-        { src: Patrick, name: 'Patrick' },
-        { src: Caveman, name: 'Caveman SpongeBob' },
-        { src: Plankton, name: 'Plankton' }
+        { src: Patrick, name: 'Patrick', found: false },
+        { src: Caveman, name: 'Caveman SpongeBob', found: false },
+        { src: Plankton, name: 'Plankton', found: false }
       ]
     },
     {
@@ -65,9 +65,9 @@ function App() {
       name: 'Lego',
       levelPicture: LegoLevel,
       characters: [
-        { src: redBlock, name: 'Red Block' },
-        { src: BlueBlock, name: 'Blue Block' },
-        { src: WhiteBlock, name: 'White Block' }
+        { src: redBlock, name: 'Red Block', found: false },
+        { src: BlueBlock, name: 'Blue Block', found: false },
+        { src: WhiteBlock, name: 'White Block', found: false }
       ]
     },
     {
@@ -75,9 +75,9 @@ function App() {
       name: 'Pokemon',
       levelPicture: PokemonLevel,
       characters: [
-        { src: Pikachu, name: 'Pikachu' },
-        { src: Kyogre, name: 'Kyogre' },
-        { src: Gardevoir, name: 'Gradevoir' }
+        { src: Pikachu, name: 'Pikachu', found: false },
+        { src: Kyogre, name: 'Kyogre', found: false },
+        { src: Gardevoir, name: 'Gradevoir', found: false }
       ]
     },
   ];

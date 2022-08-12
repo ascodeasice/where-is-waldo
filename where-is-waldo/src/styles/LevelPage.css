@@ -32,3 +32,25 @@
   width: 100%;
   height: 100%;
 }
+
+#selectBox {
+  visibility: hidden;
+  position: absolute;
+  z-index: 2;
+  background-color: grey;
+  display: grid;
+  grid-auto-rows: 1fr;
+  row-gap: 2px;
+  border: 2px solid grey;
+}
+
+#selectBox p {
+  color: white;
+  background-color: rgb(56, 56, 56);
+  padding: 10px;
+  margin: 0;
+}
+
+#selectBox p:hover {
+  opacity: 0.5;
+}
