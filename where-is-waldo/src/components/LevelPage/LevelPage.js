@@ -4,7 +4,7 @@ import LevelImage from './levelImage';
 import SelectBox from './SelectBox';
 import { useEffect } from 'react';
 
-const LevelPage = ({ level }) => {
+const LevelPage = ({ level, setLevels }) => {
   // scroll to top when component mounted
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -14,7 +14,7 @@ const LevelPage = ({ level }) => {
     <div id='levelPage'>
       <CharacterContainer characters={level.characters} />
       <LevelImage src={level.levelPicture} />
-      <SelectBox characters={level.characters} />
+      <SelectBox levelIndex={level.index} characters={level.characters} setLevels={setLevels} />
     </div>
   );
 }

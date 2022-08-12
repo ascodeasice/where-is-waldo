@@ -2,8 +2,7 @@ function roundToPlaces(num, place) {
   return Math.round(num * 10 ** place) / 10 ** place;
 }
 
-
-function logRelCoord(e) {
+function getRelCoord(e) {
   let rect = e.target.getBoundingClientRect();
   const width = rect.width;
   const height = rect.height;
@@ -12,8 +11,26 @@ function logRelCoord(e) {
   const relX = roundToPlaces(x / width, 2);
   const relY = roundToPlaces(y / height, 2);
 
-  console.log("Left? : " + relX + " ; Top? : " + relY + ".");
   return [relX, relY];
 }
 
-export { logRelCoord }
+function inRange(e, characterCoord) {
+  const relCoord = getRelCoord(e);
+  const precision = 0.02;
+  for (let i = 0; i <= 1; i++) {
+    if (relCoord[i] - precision > characterCoord[i]) {
+      return false;
+    }
+  }
+
+  for (let i = 0; i <= 1; i++) {
+    if (relCoord[i] + precision < characterCoord[i]) {
+      return false;
+    }
+  }
+
+  return true
+}
+
+
+export { getRelCoord, inRange }

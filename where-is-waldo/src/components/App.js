@@ -1,4 +1,5 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 import HomePage from './HomePage/HomePage';
 import Header from './Header';
 import LevelPage from './LevelPage/LevelPage';
@@ -30,7 +31,7 @@ import Kyogre from '../assets/pokemon/kyogre.png';
 
 function App() {
   // won't modify
-  const levels = [
+  const [levels, setLevels] = useState([
     {
       index: 0,
       name: `Waldo`,
@@ -80,7 +81,7 @@ function App() {
         { src: Gardevoir, name: 'Gradevoir', found: false }
       ]
     },
-  ];
+  ]);
 
   const location = useLocation();
 
@@ -89,7 +90,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<HomePage levels={levels} />} />
-        <Route path='/*' element={<LevelPage level={levels[location.pathname.slice(1)]} />} />
+        <Route path='/*' element={<LevelPage level={levels[location.pathname.slice(1)]} setLevels={setLevels} />} />
       </Routes>
     </div>
   );

@@ -5,9 +5,10 @@ const CharacterContainer = ({ characters }) => {
     <div className='characterContainer'>
       <h1 className='characterText'>Find:</h1>
       {
-        characters.map((character, i) =>
-          <CharacterBlock key={i} character={character} />
-        )
+        characters.filter(character => !character.found)
+          .map((character, i) =>
+            <CharacterBlock key={i} character={character} />
+          )
       }
     </div>
   );
