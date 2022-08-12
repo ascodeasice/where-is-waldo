@@ -14,17 +14,17 @@ function getRelCoord(e) {
   return [relX, relY];
 }
 
-function inRange(e, characterCoord) {
-  const relCoord = getRelCoord(e);
+function inRange(chosenCoord, characterCoord) {
+  console.log(chosenCoord, characterCoord);
   const precision = 0.02;
   for (let i = 0; i <= 1; i++) {
-    if (relCoord[i] - precision > characterCoord[i]) {
+    if (chosenCoord[i] - precision > characterCoord[i]) {
       return false;
     }
   }
 
   for (let i = 0; i <= 1; i++) {
-    if (relCoord[i] + precision < characterCoord[i]) {
+    if (chosenCoord[i] + precision < characterCoord[i]) {
       return false;
     }
   }

@@ -1,9 +1,14 @@
 import { getCharacterCoord } from "../../firebase-modules/coordData";
+import { inRange } from "../../functions/coords";
 
-const SelectBox = ({ levelIndex, characters, setLevels }) => {
-  const chooseCharacter = (e, characterIndex) => {
-    const characterCoord = getCharacterCoord(levelIndex, characterIndex);
-    // if(inRange(e,characterCoord)){ //set character to found }
+const SelectBox = ({ levelIndex, characters, setLevels, chosenCoord }) => {
+  const chooseCharacter = async (e, characterIndex) => {
+    const characterCoord = await getCharacterCoord(levelIndex, characterIndex);
+    if (inRange(chosenCoord, characterCoord)) {
+      console.log('found');
+    } else {
+      console.log('not found');
+    }
   }
 
   return (
