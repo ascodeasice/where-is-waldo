@@ -1,7 +1,8 @@
-const CharacterBlock = () => {
+const CharacterBlock = ({ character }) => {
   return (
-    <div className='characterBlock'>
-
+    <div className='character'>
+      <img alt={character.name} src={character.src} className="characterImage" draggable='false' />
+      <p className='characterName'>{character.name}</p>
     </div>
   );
 }
