@@ -93,8 +93,10 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage levels={levels} />} />
         <Route path='/level/*' element={<LevelPage levels={levels}
-          level={levels[location.pathname.match(idRegex)]} setLevels={setLevels} setUserId={setUserId} />} />
-        <Route path='/end/*' element={<EndPage level={levels[location.pathname.match(idRegex)]} />} />
+          level={levels[location.pathname.match(idRegex)]} setLevels={setLevels}
+          setUserId={setUserId} userId={userId} />} />
+        <Route path='/end/*' element={<EndPage level={levels[location.pathname.match(idRegex)]}
+          userId={userId} />} />
       </Routes>
     </div>
   );

@@ -5,7 +5,7 @@ import SelectBox from './SelectBox';
 import { useEffect, useState } from 'react';
 import { addStartTime } from '../../firebase-modules/leaderboard';
 
-const LevelPage = ({ levels, level, setLevels, setUserId }) => {
+const LevelPage = ({ levels, level, setLevels, setUserId, userId }) => {
   const [chosenCoord, setChosenCoord] = useState([-1, -1]);
 
   useEffect(() => {
@@ -16,8 +16,12 @@ const LevelPage = ({ levels, level, setLevels, setUserId }) => {
     levelsClone[level.index].characters.forEach(character => character.found = false);
     setLevels(levelsClone);
 
-    const userId = async () => await addStartTime(level.index);
-    setUserId(userId);
+    const recordUserInfo = async () => {
+      const userId = await addStartTime(level.index);
+      setUserId(userId);
+    }
+
+    recordUserInfo();
   }, []);
 
   return (
@@ -25,7 +29,8 @@ const LevelPage = ({ levels, level, setLevels, setUserId }) => {
       <CharacterContainer characters={level.characters} />
       <LevelImage src={level.levelPicture} setChosenCoord={setChosenCoord} />
       <SelectBox levelIndex={level.index} characters={level.characters}
-        setLevels={setLevels} chosenCoord={chosenCoord} levels={levels} />
+        setLevels={setLevels} chosenCoord={chosenCoord} levels={levels}
+        userId={userId} />
     </div>
   );
 }

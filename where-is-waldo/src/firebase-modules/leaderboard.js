@@ -1,4 +1,4 @@
-import { addDoc, updateDoc, doc, collection, serverTimestamp } from 'firebase/firestore';
+import { addDoc, updateDoc, doc, collection, serverTimestamp, getDoc } from 'firebase/firestore';
 import db from './firebase-config';
 
 // add time stamp of current time to db
@@ -11,10 +11,15 @@ const addStartTime = async (levelIndex) => {
   return docRef.id;
 }
 
-const addEndTime = (docId, levelIndex) => {
-  updateDoc(doc(db, `leaderboard/level${levelIndex}/players${docId}`), {
+const addEndTime = async (userId, levelIndex) => {
+  await updateDoc(doc(db, `leaderboard/level${levelIndex}/players/${userId}`), {
     endTime: serverTimestamp()
   });
 }
 
-export { addStartTime };
+const getUserDoc = async (userId, levelIndex) => {
+  const docRef = await getDoc(doc(db, `leaderboard/level${levelIndex}/players/${userId}`));
+  return docRef.data();
+}
+
+export { addStartTime, addEndTime, getUserDoc };

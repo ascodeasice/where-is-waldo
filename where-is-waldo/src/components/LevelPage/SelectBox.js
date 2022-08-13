@@ -1,8 +1,9 @@
 import { getCharacterCoord } from "../../firebase-modules/coordData";
 import { inRange } from "../../functions/coords";
 import { useNavigate } from 'react-router-dom';
+import { addEndTime } from "../../firebase-modules/leaderboard";
 
-const SelectBox = ({ levels, levelIndex, characters, setLevels, chosenCoord }) => {
+const SelectBox = ({ levels, levelIndex, characters, setLevels, chosenCoord, userId }) => {
   let navigate = useNavigate();
 
   const chooseCharacter = async (characterIndex) => {
@@ -19,10 +20,12 @@ const SelectBox = ({ levels, levelIndex, characters, setLevels, chosenCoord }) =
       if (charactersCopy.every(character => character.found)) {
         levelsCopy[levelIndex].characters.forEach(character => character.found = false);
         setLevels(levelsCopy);
+
+        // add endTime time stamp
+        await addEndTime(userId, levelIndex);
+
+        // go to end page
         navigate(`/end/${levelIndex}`);
-        // TODO add endTime time stamp
-        // TODO go to endPage
-        ;
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
