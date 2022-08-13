@@ -1,0 +1,39 @@
+#endPage {
+  background-color: var(--lightBrown);
+}
+
+#nameInput {
+  position: absolute;
+  width: var(--nameInputWidth);
+  height: var(--nameInputHeight);
+  left: calc((100vw - var(--nameInputWidth)) / 2);
+  top: calc((100vh - var(--nameInputHeight)) / 2);
+  background-color: var(--brown);
+  color: white;
+  border-radius: 2rem;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+  row-gap: 10px;
+  justify-items: center;
+}
+
+#nameInput p {
+  grid-column: 1/-1;
+}
+
+#nameInput input {
+  width: calc(4 * var(--nameInputWidth) / 5);
+  height: 30px;
+}
+
+#nameInput button {
+  border: none;
+  background-color: var(--lightBrown);
+  width: 100px;
+  height: 30px;
+}
+
+#nameInput button:hover {
+  background-color: var(--orange);
+}

@@ -10,6 +10,8 @@
   --levelPicWidth: 30vw;
   --levelTextSize: 1.5rem;
   --characterImageSize: 80px;
+  --nameInputWidth: 40vw;
+  --nameInputHeight: 40vh;
 }
 
 body {
