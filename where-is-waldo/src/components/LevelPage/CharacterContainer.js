@@ -1,4 +1,5 @@
 import CharacterBlock from "./CharacterBlock";
+import Timer from "./Timer";
 
 const CharacterContainer = ({ characters }) => {
   return (
@@ -9,6 +10,7 @@ const CharacterContainer = ({ characters }) => {
           <CharacterBlock key={i} character={character} />
         )
       }
+      <Timer />
     </div>
   );
 }

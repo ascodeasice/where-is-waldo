@@ -1,8 +1,8 @@
-function roundToPlaces(num, place) {
+const roundToPlaces = (num, place) => {
   return Math.round(num * 10 ** place) / 10 ** place;
 }
 
-function getRelCoord(e) {
+const getRelCoord = (e) => {
   let rect = e.target.getBoundingClientRect();
   const width = rect.width;
   const height = rect.height;
@@ -14,7 +14,7 @@ function getRelCoord(e) {
   return [relX, relY];
 }
 
-function inRange(chosenCoord, characterCoord) {
+const inRange = (chosenCoord, characterCoord) => {
   const precision = 0.04;
 
   return (Math.abs(chosenCoord[0] - characterCoord[0]) <= precision

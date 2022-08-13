@@ -58,3 +58,7 @@
 #selectBox p:hover {
   opacity: 0.5;
 }
+
+#timer>h1 {
+  color: white;
+}
