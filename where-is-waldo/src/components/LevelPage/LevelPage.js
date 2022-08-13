@@ -7,9 +7,11 @@ import { useEffect, useState } from 'react';
 const LevelPage = ({ levels, level, setLevels }) => {
   const [chosenCoord, setChosenCoord] = useState([-1, -1]);
 
-  // scroll to top when component mounted
+
   useEffect(() => {
+    // scroll to top when component mounted
     window.scrollTo(0, 0);
+
     let levelsClone = structuredClone(levels);
     levelsClone[level.index].characters.forEach(character => character.found = false);
     setLevels(levelsClone);

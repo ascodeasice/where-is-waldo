@@ -3,6 +3,7 @@ import { useState } from 'react';
 import HomePage from './HomePage/HomePage';
 import Header from './Header';
 import LevelPage from './LevelPage/LevelPage';
+import EndPage from './EndPage/EndPage';
 
 import WaldoLevel from '../assets/waldo/level.jpg';
 import Waldo from '../assets/waldo/waldo.png';
@@ -83,13 +84,15 @@ function App() {
   ]);
 
   const location = useLocation();
+  const idRegex = /\d+/;
 
   return (
     <div className="app">
       <Header />
       <Routes>
         <Route path='/' element={<HomePage levels={levels} />} />
-        <Route path='/*' element={<LevelPage levels={levels} level={levels[location.pathname.slice(1)]} setLevels={setLevels} />} />
+        <Route path='/level/*' element={<LevelPage levels={levels} level={levels[location.pathname.match(idRegex)]} setLevels={setLevels} />} />
+        <Route path='/end/*' element={<EndPage level={levels[location.pathname.match(idRegex)]} />} />
       </Routes>
     </div>
   );

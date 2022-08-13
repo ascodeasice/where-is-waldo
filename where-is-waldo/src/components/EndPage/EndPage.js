@@ -1,4 +1,6 @@
-const EndPage = () => {
+import '../../styles/EndPage.css';
+
+const EndPage = ({ level }) => {
   return (
     <div id='endPage'>
 
