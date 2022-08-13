@@ -15,21 +15,10 @@ function getRelCoord(e) {
 }
 
 function inRange(chosenCoord, characterCoord) {
-  console.log(chosenCoord, characterCoord);
-  const precision = 0.02;
-  for (let i = 0; i <= 1; i++) {
-    if (chosenCoord[i] - precision > characterCoord[i]) {
-      return false;
-    }
-  }
+  const precision = 0.04;
 
-  for (let i = 0; i <= 1; i++) {
-    if (chosenCoord[i] + precision < characterCoord[i]) {
-      return false;
-    }
-  }
-
-  return true
+  return (Math.abs(chosenCoord[0] - characterCoord[0]) <= precision
+    && Math.abs(chosenCoord[1] - characterCoord[1]) <= precision);
 }
 
 

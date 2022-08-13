@@ -30,7 +30,6 @@ import Pikachu from '../assets/pokemon/pikachu.jpg';
 import Kyogre from '../assets/pokemon/kyogre.png';
 
 function App() {
-  // won't modify
   const [levels, setLevels] = useState([
     {
       index: 0,
@@ -90,7 +89,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<HomePage levels={levels} />} />
-        <Route path='/*' element={<LevelPage level={levels[location.pathname.slice(1)]} setLevels={setLevels} />} />
+        <Route path='/*' element={<LevelPage levels={levels} level={levels[location.pathname.slice(1)]} setLevels={setLevels} />} />
       </Routes>
     </div>
   );
