@@ -22,7 +22,7 @@
 }
 
 .characterText {
-  color: white;
+  color: var(--lightBrown, white);
 }
 
 .characterName {
@@ -40,6 +40,9 @@
 #selectBox {
   visibility: hidden;
   position: absolute;
+  top: 0;
+  left: 0;
+  /* prevent take place in bottom */
   z-index: 2;
   background-color: grey;
   display: grid;
@@ -60,5 +63,6 @@
 }
 
 #timer>h1 {
-  color: white;
+  color: var(--lightBrown, white);
+  text-align: center;
 }

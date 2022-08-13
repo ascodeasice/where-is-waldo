@@ -10,10 +10,11 @@ const LevelPage = ({ levels, level, setLevels }) => {
   // scroll to top when component mounted
   useEffect(() => {
     window.scrollTo(0, 0);
+    let levelsClone = structuredClone(levels);
+    levelsClone[level.index].characters.forEach(character => character.found = false);
+    setLevels(levelsClone);
     // TODO add startTime time stamp
   }, []);
-
-  // TODO add timer on top
 
   return (
     <div id='levelPage'>

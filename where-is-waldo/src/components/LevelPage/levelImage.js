@@ -13,7 +13,6 @@ const LevelImage = ({ src, setChosenCoord }) => {
   return (
     <img className='levelImage' alt='level' src={src} draggable='false' onClick={(e) => {
       showSelectBox(e);
-      getRelCoord(e)
     }} />
   );
 }

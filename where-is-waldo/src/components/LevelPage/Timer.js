@@ -3,7 +3,7 @@ import { padNum } from "../../functions/format";
 
 const Timer = () => {
   const [minute, setMinute] = useState(0);
-  const [second, setSecond] = useState(50);
+  const [second, setSecond] = useState(0);
 
   const addSecond = () => {
     if (second === 59) {
@@ -14,11 +14,13 @@ const Timer = () => {
     }
   }
 
+  // reset timer when mounted
   useEffect(() => {
     setMinute(0);
     setSecond(0);
   }, [])
 
+  // count
   useEffect(() => {
     setTimeout(addSecond, 1000);
     return () => {
