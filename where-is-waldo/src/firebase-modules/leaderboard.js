@@ -22,4 +22,10 @@ const getUserDoc = async (userId, levelIndex) => {
   return docRef.data();
 }
 
-export { addStartTime, addEndTime, getUserDoc };
+const updateName = async (userId, levelIndex, name) => {
+  await updateDoc(doc(db, `leaderboard/level${levelIndex}/players/${userId}`), {
+    name: name
+  });
+}
+
+export { addStartTime, addEndTime, getUserDoc, updateName };
