@@ -1,4 +1,4 @@
-import { addDoc, updateDoc, doc, collection, serverTimestamp, getDoc } from 'firebase/firestore';
+import { addDoc, updateDoc, doc, collection, serverTimestamp, getDoc, getDocs } from 'firebase/firestore';
 import db from './firebase-config';
 
 // add time stamp of current time to db
@@ -28,4 +28,13 @@ const updateName = async (userId, levelIndex, name) => {
   });
 }
 
-export { addStartTime, addEndTime, getUserDoc, updateName };
+const getSecondsPast = (doc) => {
+  return doc && doc.startTime && doc.endTime ? doc.endTime.seconds - doc.startTime.seconds : 'loading...';
+}
+
+const getLeaderBoardCollection = async (levelIndex) => {
+  const snapShot = await getDocs(collection(db, `leaderboard/level${levelIndex}/players`));
+  return snapShot.docs;
+}
+
+export { addStartTime, addEndTime, getUserDoc, updateName, getSecondsPast, getLeaderBoardCollection };

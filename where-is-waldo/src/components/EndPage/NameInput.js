@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { getUserDoc, updateName } from "../../firebase-modules/leaderboard";
+import { getUserDoc, updateName, getSecondsPast } from "../../firebase-modules/leaderboard";
 import { formatSeconds } from "../../functions/format";
 
-const NameInput = ({ level, userId, showNameInput }) => {
+const NameInput = ({ level, userId, fetchUsers }) => {
   const [doc, setDoc] = useState(null);
   const [inputValue, setInputValue] = useState('anonymous');
   const [display, setDisplay] = useState('block');
@@ -23,6 +23,7 @@ const NameInput = ({ level, userId, showNameInput }) => {
   const submitName = () => {
     updateName(userId, level.index, inputValue);
     setDisplay('none');
+    fetchUsers(level);
   }
 
   const handleKeyDown = (e) => {
@@ -33,8 +34,7 @@ const NameInput = ({ level, userId, showNameInput }) => {
 
   return (
     <div id='nameInput' style={{ display: display }}>
-      <p>You finished {level.name} level in {!doc || !doc.startTime || !doc.endTime ? 'loading...' :
-        formatSeconds(doc.endTime.seconds - doc.startTime.seconds)},
+      <p>You finished {level.name} level in {formatSeconds(getSecondsPast(doc))},
         input your name to record your score.</p>
       <input type='text' placeholder="anonymous" onChange={handleChange} onKeyDown={handleKeyDown} />
       <button onClick={submitName}>Sumbit</button>

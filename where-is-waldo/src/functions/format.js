@@ -7,7 +7,11 @@ const padNum = (num, padLen) => {
 }
 
 const formatSeconds = (seconds) => {
-  return `${padNum(Math.floor(seconds / 60), 1)}:${padNum(seconds % 60, 1)}`;
+  if (typeof seconds === 'string') {
+    return seconds;
+  } else {
+    return `${padNum(Math.floor(seconds / 60), 1)}:${padNum(seconds % 60, 1)}`;
+  }
 }
 
 export { padNum, formatSeconds };
