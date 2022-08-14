@@ -17,10 +17,10 @@ const LeaderBoard = ({ level, users }) => {
             : ''
         )
       }
-      <div id='githubLink'>
+      <a id='githubLink' href='https://github.com/ascodeasice/where-is-waldo'>
         <img id='githubIcon' src={Github} alt='' />
         <h1 id='githubText'>Check Github</h1>
-      </div>
+      </a>
     </div>
   );
 }

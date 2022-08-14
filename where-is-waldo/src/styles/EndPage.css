@@ -1,5 +1,7 @@
 #endPage {
   background-color: var(--lightBrown);
+  min-width: calc(100vw - 15px);
+  width: fit-content;
 }
 
 #nameInput {
@@ -53,7 +55,7 @@
 
 .playerInfo {
   display: grid;
-  grid-template-columns: min-content min-content min-content;
+  grid-template-columns: min-content 1fr min-content;
   column-gap: 10px;
   border-bottom: 1px solid grey;
   margin-right: 10px;

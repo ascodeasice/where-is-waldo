@@ -5,8 +5,13 @@ A photo tagging app that allows user to play where is waldo, and see their and o
 - Use firebase for leaderboard info, timer, coordinates of characters
 
 # Result
+## Select levels
+![home page](./where-is-waldo/public/results/homePage.png)
+## Level
+![level page](./where-is-waldo/public/results/levelPage.png)
 
 # Link
+[Live Preview](https://where-is-waldo-and-more.web.app)
 # Credits
 - [Background picture](https://www.reddit.com/r/Minecraft/comments/qzp56v/all_blocks_and_items_arranged_according_to_what/) of Minecraft level
 - [Background picture](https://nickelodeon.fandom.com/wiki/List_of_SpongeBob_SquarePants_characters?file=SpongeBob-characters-group-poster.jpg) of SpongeBob level
