@@ -23,6 +23,9 @@ const getUserDoc = async (userId, levelIndex) => {
 }
 
 const updateName = async (userId, levelIndex, name) => {
+  if (userId === 'none') {
+    return;
+  }
   await updateDoc(doc(db, `leaderboard/level${levelIndex}/players/${userId}`), {
     name: name
   });

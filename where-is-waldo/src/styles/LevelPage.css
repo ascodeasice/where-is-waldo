@@ -23,6 +23,7 @@
 
 .characterText {
   color: var(--lightBrown, white);
+  font-family: 'Open Sans', 'Oswald', sans-serif
 }
 
 .characterName {

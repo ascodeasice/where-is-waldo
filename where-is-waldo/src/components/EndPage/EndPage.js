@@ -2,17 +2,21 @@ import '../../styles/EndPage.css';
 import LeaderBoard from './LeaderBoard';
 import NameInput from './NameInput';
 import { useState, useEffect } from 'react';
-import { getLeaderBoardCollection } from '../../firebase-modules/leaderboard';
+import { getLeaderBoardCollection, getSecondsPast } from '../../firebase-modules/leaderboard';
 
 const EndPage = ({ level, userId }) => {
   const [users, setUsers] = useState([]);
   const fetchUsers = async (level) => {
-    const docs = await getLeaderBoardCollection(level.index);
+    let docs = await getLeaderBoardCollection(level.index);
+    // filter invalid player(quit in the middle/ through invalid path)
+    docs = docs.filter(doc => doc.data().startTime && doc.data().endTime);
+    docs.sort((a, b) => getSecondsPast(a.data()) - getSecondsPast(b.data()))
     setUsers(docs);
   }
 
   useEffect(() => {
     fetchUsers(level);
+    window.scrollTo(0, 0);
   }, []);
 
   return (

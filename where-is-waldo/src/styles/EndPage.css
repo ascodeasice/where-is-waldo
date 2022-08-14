@@ -37,3 +37,50 @@
 #nameInput button:hover {
   background-color: var(--orange);
 }
+
+#leaderBoard {
+  display: grid;
+  grid-auto-rows: min-content;
+  padding-left: 10px;
+}
+
+#levelName {
+  color: var(--brown);
+  white-space: nowrap;
+  font-size: 2.5rem;
+  border-bottom: 2px solid grey;
+}
+
+.playerInfo {
+  display: grid;
+  grid-template-columns: min-content min-content min-content;
+  column-gap: 10px;
+  border-bottom: 1px solid grey;
+  margin-right: 10px;
+}
+
+.playerInfo>p {
+  font-family: 'Open Sans', sans-serif;
+  white-space: nowrap;
+}
+
+#githubLink {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  column-gap: 10px;
+  justify-self: center;
+  align-items: center;
+}
+
+#githubLink:hover {
+  filter: invert(59%) sepia(16%) saturate(829%) hue-rotate(335deg) brightness(92%) contrast(88%);
+}
+
+#githubIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+#githubText {
+  white-space: nowrap;
+}
